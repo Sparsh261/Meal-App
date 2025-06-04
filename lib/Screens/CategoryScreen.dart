@@ -8,7 +8,13 @@ class  CategoryScreen extends StatelessWidget {
 @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Pick category"),),
+      appBar: AppBar(
+        title: Text("Pick category",
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.blueGrey,
+      ),
+      backgroundColor: const Color.fromARGB(255, 143, 152, 167),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: GridView(
@@ -20,13 +26,10 @@ class  CategoryScreen extends StatelessWidget {
           ),
           children: [
             for(Category category in availableCategories)
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: CategoryGridItem(category: category),
-              ),
+              CategoryGridItem(category: category),
           ],
         ),
-      )
+      ),
     );
   }
 }
